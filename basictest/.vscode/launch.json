@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
             "name": "(gdb) Bash on Windows Launch",
             "type": "cppdbg",
@@ -15,11 +14,19 @@
             "cwd": "/mnt/d/dev/gatechprojects/basictest",
             "environment": [],
             "externalConsole": false,
+            "sourceFileMap": {
+                "/mnt/d/dev/gatechprojects/basictest": "d:/dev/gatechprojects/basictest"
+            },
+            // "logging" : {
+            //     "engineLogging": true,
+            //     "trace": true,
+            //     "traceResponse": true
+            // },
             "pipeTransport": {
                 "debuggerPath": "/usr/bin/gdb",
                 "pipeProgram": "${env:windir}\\system32\\bash.exe",
                 "pipeArgs": ["-c"],
-                "pipeCwd": "${workspaceRoot}"
+                "pipeCwd": "",
             },
             "setupCommands": [
                 {
@@ -29,5 +36,6 @@
                 }
             ]
         }
+        
     ]
 }
