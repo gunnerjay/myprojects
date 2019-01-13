@@ -20,6 +20,6 @@ We will manually review your file looking for:
 __Please tell us what you know doesn't work in this submission__
 
 ## References
-
 __Please include references to any external materials that you used in your project__
+1. Beej's Guide to Network Programming Using Internet Sockets http://beej.us/guide/bgnet/html/single/bgnet.html
 
