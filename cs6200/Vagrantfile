@@ -8,7 +8,7 @@
 Vagrant.configure(2) do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
-  # https://docs.vagrantup.com.
+  # https://www.vagrantup.com/docs/
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
@@ -50,6 +50,8 @@ Vagrant.configure(2) do |config|
   
     # Customize the amount of memory on the VM:
     vb.memory = "1024"
+    #enable the next line if you would like to have more than one core in your container
+    vb.customize ["modifyvm", :id, "--cpus", 2]
   end
   #
   # View the documentation for the provider you are using for more
@@ -71,9 +73,9 @@ config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get -y install \
       build-essential git pkg-config zip unzip software-properties-common \
       python-pip python-dev \
-      libgmp-dev gcc-multilib valgrind openmpi-bin openmpi-doc libopenmpi-dev \
+      libgmp-dev gcc-multilib valgrind \
       portmap rpcbind libcurl4-openssl-dev bzip2 imagemagick libmagickcore-dev \
-      libssl-dev libffi6 libffi-dev llvm
+      libssl-dev llvm
 
     sudo pip install --upgrade pip
     sudo pip install --upgrade requests future cryptography pyopenssl ndg-httpsclient pyasn1 nelson
