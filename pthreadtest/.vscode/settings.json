@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "pthread.h": "c",
+        "priority-readers-and-writers.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "steque.h": "c"
+    }
+}
