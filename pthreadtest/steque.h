@@ -1,6 +1,8 @@
 #ifndef STEQUE_H
 #define STEQUE_H
 
+// THIS CODE IS NOT WRITTEN BY ME, IT WAS PROVIDED IN A CLASS THAT I AM TAKING AND I WANTED TO LEARN HOW TO USE THIS DATA STRUCTURE
+
 typedef void* steque_item;
 
 typedef struct steque_node_t{

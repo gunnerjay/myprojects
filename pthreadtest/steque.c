@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "steque.h"
 
+// THIS CODE IS NOT WRITTEN BY ME, IT WAS PROVIDED IN A CLASS THAT I AM TAKING AND I WANTED TO LEARN HOW TO USE THIS DATA STRUCTURE
+
 void steque_init(steque_t *this){
   this->front = NULL;
   this->back = NULL;
