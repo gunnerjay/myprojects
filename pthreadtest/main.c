@@ -5,6 +5,11 @@
 #include <string.h>
 #include "steque.h"
 
+// This is a short program to test my understanding of pthreads, and the boss/worker pattern for multi-threading
+// It uses a work queue to populate work items for the worker threads to pick up and process.  Requires synchronization
+// objects to guard against MT issues.  I also experimented with main() being the boss thread, and then having
+// a separate thread for the boss, which is why the commented out sections are in place.
+
 struct context_t {
     int sockFd;
 };
@@ -60,24 +65,6 @@ void* workerThread(void* threadArg) {
             pthread_cond_broadcast(&gDoWork);
         }
     }
-
-    // while(completedRequests < TOTAL_REQUESTS) {
-    //     context_t* context;
-
-    //     pthread_mutex_lock(&gGoMutex);
-    //         while (steque_isempty(&gQueue)) {
-    //             printf("%lu waiting\n", pthread_self());
-    //             pthread_cond_wait(&gDoWork, &gGoMutex);
-    //             printf("%lu woke up\n", pthread_self());
-    //         }
-    //         context = (context_t*)steque_pop(&gQueue);
-    //         size = steque_size(&gQueue);
-    //         completedRequests++;
-    //         printf("completed request %d\n", completedRequests);
-    //     pthread_mutex_unlock(&gGoMutex);
-
-    //     printf("thread %lu times: %d queue len %d context: %d \n", pthread_self(), ++count, size, context->sockFd);
-    // }
 
     printf("exiting thread %lu\n", pthread_self());
 
