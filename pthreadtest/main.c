@@ -115,9 +115,10 @@ int main() {
 
     pthread_join(bossThreadId, NULL);
     
-    return 0;
     //pthread_attr_destroy(&attr);
-    //steque_destroy(&gQueue);
+    steque_destroy(&gQueue);
+
+    return 0;
 }
 
 // int main() {
